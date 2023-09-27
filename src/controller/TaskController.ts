@@ -96,6 +96,17 @@ const deleteAllTasks = async (req, res) => {
   }
 };
 
+const sayHello = async (req, res) => {
+  
+  try {
+  
+    res.send("Hola desde del API 🎈");
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'fallamos amigo' });
+  }
+};
+
 module.exports = {
   getAllTasks,
   getTaskById,
@@ -103,4 +114,5 @@ module.exports = {
   updateTask,
   deleteTask,
   deleteAllTasks,
+  sayHello
 };

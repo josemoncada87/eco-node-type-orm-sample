@@ -16,5 +16,8 @@ router.delete('/tasks/:id', TaskController.deleteTask);
 // Eliminar todas las tareas
 router.delete('/tasks/', TaskController.deleteAllTasks);
 
+//Saludar desde el API
+router.get('/', TaskController.sayHello);
+
 module.exports = router;
 
