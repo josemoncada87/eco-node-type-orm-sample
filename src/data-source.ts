@@ -13,7 +13,7 @@ export const AppDataSource = new DataSource({
     database: process.env.PGDATABASE,
     synchronize: true, // Para Dev
     logging: true, // Para Dev
-    entities: [Task],
+    entities: [Task], // Se requiere incluir cada nueva entidad
     migrations: [],
     subscribers: [],
     ssl: { rejectUnauthorized: false }, // Ignora el error de certificado no confiable
