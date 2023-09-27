@@ -2,13 +2,15 @@ import "reflect-metadata"
 import { DataSource } from "typeorm"
 import { Task } from "./entities/Task"
 
+require('dotenv').config();
+
 export const AppDataSource = new DataSource({
     type: 'postgres',
-    host: 'ep-nameless-tree-91732974.us-east-2.aws.neon.tech', // Your host
+    host: process.env.PGHOST,
     port: 5432, // Default PostgreSQL port
-    username: 'fl0user', // Usuario || process.env.PORT
-    password: 'fn2vdPq8VzWi', // Contraseña
-    database: 'ECO-DB', // Nombre
+    username: process.env.PGUSER,
+    password: process.env.PGPASSWORD,
+    database: process.env.PGDATABASE,
     synchronize: true, // Para Dev
     logging: true, // Para Dev
     entities: [Task],
