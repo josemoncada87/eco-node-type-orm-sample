@@ -2,13 +2,13 @@
 import * as express from "express"
 const router = require("../src/routes/taskRoutes");
 
+const port = process.env.PORT ?? 3000;
 // create and setup express app
 const app = express()
-
+const cors = require("cors")
 app.use(express.json())
+app.use(cors())
 app.use('/api', router);
-
-const port = process.env.PORT ?? 3000;
 
 // start express server
 app.listen(port, () => {

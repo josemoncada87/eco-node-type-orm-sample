@@ -6,7 +6,7 @@ export const AppDataSource = new DataSource({
     type: 'postgres',
     host: 'ep-nameless-tree-91732974.us-east-2.aws.neon.tech', // Your host
     port: 5432, // Default PostgreSQL port
-    username: 'fl0user', // Usuario
+    username: 'fl0user', // Usuario || process.env.PORT
     password: 'fn2vdPq8VzWi', // Contraseña
     database: 'ECO-DB', // Nombre
     synchronize: true, // Para Dev
